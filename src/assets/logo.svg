@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="195" height="71" viewBox="0 0 195 71">
+  <g id="Group_5" data-name="Group 5" transform="translate(-63 -31)">
+    <g id="Group_4" data-name="Group 4">
+      <g id="Rectangle_6" data-name="Rectangle 6" transform="translate(63 31)" stroke="#707070" stroke-width="1">
+        <rect width="195" height="71" stroke="none"/>
+        <rect x="0.5" y="0.5" width="194" height="70" fill="none"/>
+      </g>
+      <text id="RISIT" transform="translate(79 90)" fill="#1f0" font-size="61" font-family="aAstroSpace, a Astro Space"><tspan x="0" y="0">RISIT</tspan></text>
+    </g>
+  </g>
+</svg>

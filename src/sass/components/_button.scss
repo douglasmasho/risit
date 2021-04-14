@@ -1,0 +1,31 @@
+.btn,
+.btn:visited{
+    display: inline-block;
+    text-transform: uppercase;
+    color: white;
+    text-decoration: none;
+    background-color: black;
+    padding: 1rem 1.5rem;
+    transition: all .3s;
+    border-radius: 30px;
+    backface-visibility: hidden;
+    border: none;
+    font-family: "Montserrat", sans-serif;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+
+.btn:hover{
+    color: black;
+    background-color: yellow;
+    border: black 1px solid;
+
+
+}
+
+.btn:active{
+    color: rgb(255, 238, 0);
+    background-color: rgb(255, 255, 255);
+    border: black 1px solid;
+}
