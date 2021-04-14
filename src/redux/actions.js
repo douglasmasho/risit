@@ -5,3 +5,9 @@ export const addTest = (obj)=>{
     }
 }
 
+export const addRItem = (rObject)=>{
+    return {
+        type: "ADD_ITEM",
+        item: rObject
+    }
+}

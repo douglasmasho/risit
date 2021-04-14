@@ -1,31 +1,53 @@
-import React from 'react';
+import React, {createRef} from 'react';
 import {connect} from "react-redux";
 import * as actionCreators from "../redux/actions";
 import {bindActionCreators} from "redux";
+import Preview from "./Preview";
 
 
 class Form extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {};
-        this.testFunc = this.testFunc.bind(this);
+        this.state = {
+            detail: "",
+            amount: ""
+        };
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.detailRef = createRef();
+        this.amountRef = createRef();
+
     }
 
-
-    testFunc = ()=>{
-        this.props.addTest("something");
+    handleChange = ({target})=>{
+        this.setState((state, prevState)=>({
+            [target.id] : target.value,
+        }))
     }
+
+    handleSubmit = (e)=>{
+        e.preventDefault();
+        console.log(this.state);
+        this.detailRef.current.value = "";
+        this.amountRef.current.value = "";
+        ///dispatch the state to the reducer
+        this.props.addRItem(this.state);
+
+    }
+
     testFunc2 = ()=>{
-        console.log(this.props.test);
+        console.log(this.props.items);
     }
+
+
     render() {
         return (
             <div>
-                <button onClick={this.testFunc}>Add Something</button>
+                {/* <button onClick={this.testFunc}>Add Something</button> */}
                 <button onClick={this.testFunc2}>Check State</button>
 
                 <h2 className="header-text">Input Donor Details</h2>
-                <form action="">
+                <form action="" onSubmit={this.handleSubmit}>
                     <div className="center-hrz--col">
                         <div className="input-group center-hrz--col row-2--child">
                             <input type="text" name="text" id="firstName" className="input-textbox" placeholder="First name" required/>
@@ -67,20 +89,20 @@ class Form extends React.Component {
 
                     <div className="center-hrz--col">
                         <div className="input-group center-hrz--col row-2--child">
-                            <input type="text" name="text" id="detail" className="input-textbox" placeholder="Donation detail" required/>
+                            <input type="text" name="text" id="detail" className="input-textbox" placeholder="Donation detail" required onChange={this.handleChange} ref={this.detailRef} />
                             <label htmlFor="detail" className="input--label">Donation detail</label>
                         </div>
 
                         <div className="input-group center-hrz--col row-2--child">
-                            <input type="number" name="number" id="amount" className="input-number" placeholder="Amount in N$" required/>
+                            <input type="number" name="number" id="amount" className="input-number" placeholder="Amount in N$" required onChange={this.handleChange} ref={this.amountRef} step=".01"/>
                             <label htmlFor="amount" className="input--label">Amount in N$</label>
                         </div>         
                     </div>
-
                     <div className="center-hrz">
                        <button type="submit" className="btn normal-text">Add Item</button>   
                     </div>
                 </form>
+                <Preview/>      
             </div>
         );
     }
@@ -88,7 +110,8 @@ class Form extends React.Component {
 
 const mapStateToProps = (state)=>{
     return ({
-        test: state.test
+        test: state.test,
+        items: state.receiptItems
     })
 }
 

@@ -1,0 +1,41 @@
+.rItems{
+    &--header{
+        background-color: white;
+        justify-content: space-between;
+        font-weight: bolder;
+        font-size: 1.6rem;
+
+
+        // @include respond(phone){
+        //     display: none !important;
+        // }
+
+    }
+
+    &--data{
+        justify-content: space-between;
+        padding: 1rem 0.5rem;
+        border-top: white .5px solid;
+        border-left: white .5px solid;
+        border-right: white .5px solid;
+        &:last-child{
+            border-bottom: white .25px solid !important;
+        }
+    }
+
+    &--row{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        & p{
+            font-size: 2rem;
+        }
+    }
+        // @include respond(phone){
+        //     justify-content: flex-start !important;
+        //     align-items: center;
+        //     margin-bottom: 5rem;
+        // }
+}
+
