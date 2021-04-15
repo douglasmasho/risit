@@ -11,3 +11,16 @@ export const addRItem = (rObject)=>{
         item: rObject
     }
 }
+export const addInfo = (iObject)=>{
+    return {
+        type: "ADD_INFO",
+        info: iObject
+    }
+}
+
+export  const removeRItem = (uid)=>{
+    return {
+        type: "REMOVE_ITEM",
+        uid
+    }
+}

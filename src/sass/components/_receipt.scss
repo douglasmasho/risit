@@ -1,0 +1,41 @@
+.receipt{
+    background-color: $deep-blue;
+    width: 90%;
+    padding: 2rem 3rem;
+    font-family: "Poppins", sans-serif;
+    color: white;
+
+    &__logo{
+        width: 12rem;
+    }
+
+    &__company{
+        &-name{
+            font-size: 3rem;
+            & span{
+                @include spanStyle;
+            }
+        }
+        &-info{
+            font-size: 1.3rem;
+        }
+    }
+    
+
+    &__title{
+        font-size: 4rem;
+        font-weight: 600 !important;
+         & span{
+            @include spanStyle;
+         }
+    }
+
+    &__donor-info{
+        font-size: 1.5rem;
+    }
+}
+
+.div1{
+    border-left: $red-ish 5px solid;
+    padding-left: 2rem;
+}

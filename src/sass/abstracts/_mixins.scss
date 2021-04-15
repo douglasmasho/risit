@@ -40,3 +40,10 @@
        }
    }
 }
+
+
+@mixin spanStyle{
+    color: $deep-blue !important;
+    background-color: white;
+    padding: 0.2rem 1rem;
+}
