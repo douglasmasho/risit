@@ -38,17 +38,26 @@ const RItem = (props) => {
 
     return (
         <div className="rItems--data row" ref={itemRef} id={uid}>
-            <li className="white-text rItems--row row-8--child" >
-                <p onClick={()=>{
+            <table style={{width: "100%"}}>
+                <td style={{width: "50%"}}>
+                <li className="white-text rItems--row"  >
+                <p className="receipt-data" onClick={()=>{
                     edit("detail");
                 }}>{detail}</p>
-            </li>  
-            <li className="white-text rItems--row row-8--child" >
-                <p onClick={()=>{
+            </li>       
+                </td>
+
+                <td style={{width: "50%"}}>
+                <li className="white-text rItems--row" style={{ textAlign: "right", justifyContent: "flex-end"}}>
+                <p className="receipt-data" onClick={()=>{
                     edit("amount");
                 }}>{formatterRef.current.format(amount)}</p>
                 <p onClick={removeItem}>X</p>
-            </li>   
+            </li>  
+                    </td>
+            </table>
+
+ 
         </div>
     )
 }

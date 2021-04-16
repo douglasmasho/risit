@@ -1,7 +1,10 @@
 .row{
     display: flex;
     padding: 1rem 0.5rem;
-
+    @media print{
+        display: flex;
+    padding: 1rem 0.5rem;    
+    }
     @include respond(phone){
         flex-direction: column;
     }

@@ -4,44 +4,80 @@
     padding: 2rem 3rem;
     font-family: "Poppins", sans-serif;
     color: white;
-
+    width: 210mm;
+    min-height: 297mm;
+    margin-left: auto;
+    margin-right: auto;
     &__logo{
         width: 12rem;
+
+        @media print{
+        width: 20rem;
+        }
     }
 
     &__company{
         &-name{
             font-size: 3rem;
+            color: white !important;
+            @media print{
+                font-size: 6rem;
+            }
             & span{
+            color: $deep-blue !important;
                 @include spanStyle;
             }
         }
         &-info{
             font-size: 1.3rem;
+        color: white !important;
+        @media print{
+            font-size: 3rem;
+        }
         }
     }
     
 
     &__title{
+        text-align: right;
         font-size: 4rem;
         font-weight: 600 !important;
+        color: white !important;
          & span{
+        color: $deep-blue !important;
             @include spanStyle;
          }
     }
 
     &__donor-info{
         font-size: 1.3rem;
+        @media print{
+            font-size: 3rem;
+        }
     }
 
     &__donor-info-div{
         background-color: white;
+        border-radius: 10px;
         color: $deep-blue;
         padding: 2rem;
+    }
+
+    &-data{
+        @media print{
+            font-size: 3rem !important;
+        }
+    }
+
+    &-donor-info{
+        @media print{
+            font-size: 4rem !important;
+        }
     }
 }
 
 .div1{
     border-left: $red-ish 5px solid;
     padding-left: 2rem;
+    justify-content: flex-start !important;
 }

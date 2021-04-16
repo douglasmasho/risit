@@ -115,13 +115,17 @@ const Snippet = (props) => {
         <div className="center-hrz">
         <div style={{backgroundColor: props.backColor, padding: "2rem", width: props.width, borderRadius: "10px"}}>
                 <div className="rItems--header row">
-                    <p className="row-8--child black-text" style={{color: "black"}}>Description</p>
-                    <p className="row-8--child black-text" style={{color: "black"}}>Amount N$</p>   
+                    <table style={{width: "100%"}}>
+                        <td style={{width: "50%", }}> <p className="row-2--child black-text" style={{color: "black"}}>Description</p></td>
+                        <td style={{width: "50%"}}> <p className=" black-text" style={{color: "black", textAlign: "right"}}>Amount N$</p>   </td>
+                    </table>
+                   
+                    
                 </div>
             <div>
               {props.items.map((item)=>(<RItem key={nanoid()} rObject={item} edit={edit} currentEdit={editIDRef.current}/>))}
             </div>
-            <h2 className="white-text bigger-text u-margin-top">Total: N{formatterRef.current.format(totalRef.current)}</h2>
+            <h2 className="white-text bigger-text u-margin-top receipt-data">Total: N{formatterRef.current.format(totalRef.current)}</h2>
             <div className="edit u-margin-top center-hrz--col"> 
 
             <form id="edit-description" style={{display: "none"}} ref={editDetailRef} onSubmit={submitEditDetail}>
