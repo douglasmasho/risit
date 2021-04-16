@@ -24,3 +24,10 @@ export  const removeRItem = (uid)=>{
         uid
     }
 }
+
+export  const editRItem = (type, payload ,uid)=>{
+    return {
+        type: "EDIT_ITEM",
+        info: {type, payload, uid}
+    }
+}

@@ -44,6 +44,9 @@ class Form extends React.Component {
               ... this.state,
               uid: nanoid()
             });
+            document.querySelector("#edit-description").style.display = "none";
+            document.querySelector("#edit-amount").style.display = "none";
+
     }
 
     handleInfo = ()=>{

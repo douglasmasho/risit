@@ -27,7 +27,13 @@ const receiptReducer = (state = [],action)=>{
             state.splice(toBeRemoved, 1);
             console.log(state);
             //return the state
-            return [...state]
+            return [...state];
+         case "EDIT_ITEM": 
+            const toBeEdited = state.find((el)=>el.uid === action.info.uid);
+            toBeEdited[action.info.type] = action.info.payload;
+            const removeIndex = state.findIndex((el)=>el.uid === action.info.uid);
+            state.splice(removeIndex, 1, toBeEdited);
+            return [...state];
            default: return state;   
 
     }  
@@ -39,6 +45,7 @@ const donorInfoReducer = (state = {},action)=>{
         default: return state;   
     }  
 }
+
 
 const rootReducer = combineReducers({
     test: testReducer,
