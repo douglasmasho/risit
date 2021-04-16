@@ -82,10 +82,10 @@ const Create = (props) => {
                 <Snippet width="100%"/>
                 </div>
             </div>
-            <button onClick={()=>functionRef.current()}>Print</button>
+            {/* <button onClick={()=>functionRef.current()}>Print</button>
             <button onClick={() => exportComponentAsPNG(pdfRef)}>
          Export As JPEG
-       </button>
+       </button> */}
 
        <ReactToPrint
         trigger={() => <button>Print this out!</button>}
