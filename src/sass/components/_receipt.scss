@@ -31,7 +31,13 @@
     }
 
     &__donor-info{
-        font-size: 1.5rem;
+        font-size: 1.3rem;
+    }
+
+    &__donor-info-div{
+        background-color: white;
+        color: $deep-blue;
+        padding: 2rem;
     }
 }
 

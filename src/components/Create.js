@@ -25,11 +25,11 @@ const Create = (props) => {
                        
                     <div>
                       <p className="receipt__title">Donation <span>Receipt</span></p>
-                      <div>
+                      <div className="u-margin-top receipt__donor-info-div">
                           <h1>Donor Information</h1>
-                         <p className="receipt__donor-info">{firstName} {lastName}</p>
-                         <p className="receipt__donor-info">{email}</p>
-                         <p className="receipt__donor-info">{company}</p>
+                         <p className="receipt__donor-info">Name: {firstName} {lastName}</p>
+                         <p className="receipt__donor-info">Email: {email}</p>
+                         <p className="receipt__donor-info">Comapany: {company}</p>
                          <p className="receipt__donor-info">{address1}</p>
                          <p className="receipt__donor-info">{address2}</p>
                          <p className="receipt__donor-info">{city}</p>
