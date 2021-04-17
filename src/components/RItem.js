@@ -41,7 +41,7 @@ const RItem = (props) => {
             <table style={{width: "100%"}}>
                 <td style={{width: "50%"}}>
                 <li className="white-text rItems--row"  >
-                <p className="receipt-data" onClick={()=>{
+                <p className="receipt-data u-margin-right-small" onClick={()=>{
                     edit("detail");
                 }}>{detail}</p>
             </li>       
@@ -49,10 +49,10 @@ const RItem = (props) => {
 
                 <td style={{width: "50%"}}>
                 <li className="white-text rItems--row" style={{ textAlign: "right", justifyContent: "flex-end"}}>
-                <p className="receipt-data" onClick={()=>{
+                <p className="receipt-data u-margin-right-small" onClick={()=>{
                     edit("amount");
                 }}>{formatterRef.current.format(amount)}</p>
-                <p onClick={removeItem}>X</p>
+                <p onClick={removeItem} className="remove-item">X</p>
             </li>  
                     </td>
             </table>

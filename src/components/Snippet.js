@@ -110,7 +110,7 @@ const Snippet = (props) => {
     }
     
     return (
-        <div className="u-margin-top-big">
+        <div className="u-margin-top u-margin-bottom">
         
         <div className="center-hrz">
         <div style={{backgroundColor: props.backColor, padding: "2rem", width: props.width, borderRadius: "10px"}}>
@@ -129,9 +129,9 @@ const Snippet = (props) => {
             <div className="edit u-margin-top center-hrz--col"> 
 
             <form id="edit-description" style={{display: "none"}} ref={editDetailRef} onSubmit={submitEditDetail}>
-                    <h1 className="white-text">Edit Description</h1>
-                       <div className="input-group center-hrz--col row-2--child">
-                            <input type="text" name="number" id="description-edit" className="input-number" placeholder="Description" required ref={inputDetailRef}/>
+                    <h1 className="white-text u-margin-bottom" style={{textAlign: "center"}}>Edit Description</h1>
+                       <div className="input-group center-hrz--col">
+                            <input type="text" name="number" id="description-edit" className="input-number" placeholder="Description" required ref={inputDetailRef} style={{width: "100%"}}/>
                             <label htmlFor="amount-edit" className="input--label">Description</label>
                         </div>   
                        <button type="submit" className="btn normal-text">Edit Item Description</button>  
@@ -141,10 +141,10 @@ const Snippet = (props) => {
                        }}>Close</button>    
                 </form>
 
-                <form id="edit-amount" style={{display: "none"}} ref={editAmountRef} onSubmit={submitEditAmount}>
-                    <h1 className="white-text">Edit Amount</h1>
-                       <div className="input-group center-hrz--col row-2--child">
-                            <input type="number" name="number" id="amount-edit" className="input-number" placeholder="Amount in N$" required  step=".01"  ref={inputAmountRef}/>
+                <form id="edit-amount" className="center-hrz--col" style={{display: "none"}} ref={editAmountRef} onSubmit={submitEditAmount}>
+                    <h1 className="white-text u-margin-bottom" style={{textAlign: "center"}}>Edit Amount</h1>
+                       <div className="input-group center-hrz--col" >
+                            <input type="number" name="number" id="amount-edit" className="input-number" placeholder="Amount in N$" required  step=".01"  ref={inputAmountRef} style={{width: "100%"}}/>
                             <label htmlFor="amount-edit" className="input--label">Amount in N$</label>
                         </div>   
                        <button type="submit" className="btn normal-text">Edit Item Amount</button>    

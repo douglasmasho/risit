@@ -19,6 +19,7 @@ class Form extends React.Component {
             address1:"",
             address2:"",
             city:"",
+            country: ""
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -60,8 +61,8 @@ class Form extends React.Component {
 
     render() {
         return (
-            <div>
-                <button onClick={this.testFunc2}>Check State</button>
+            <div className="u-margin-bottom">
+                {/* <button onClick={this.testFunc2}>Check State</button> */}
                 <h2 className="header-text">Input Donor Details</h2>
                 <form action="" onSubmit={this.handleSubmit}>
                     <div className="center-hrz--col">
@@ -97,7 +98,12 @@ class Form extends React.Component {
 
                         <div className="input-group center-hrz--col row-2--child">
                             <input type="text" name="fullAddress" id="city" className="input-textbox" placeholder="City" required onChange={this.handleChange}/>
-                            <label htmlFor="City" className="input--label">City</label>
+                            <label htmlFor="city" className="input--label">City</label>
+                        </div>
+
+                        <div className="input-group center-hrz--col row-2--child">
+                            <input type="text" name="fullAddress" id="country" className="input-textbox" placeholder="Country" required onChange={this.handleChange}/>
+                            <label htmlFor="country" className="input--label">Country</label>
                         </div>
                     </div>
 
@@ -118,9 +124,9 @@ class Form extends React.Component {
                        <button type="submit" className="btn normal-text">Add Item</button>   
                     </div>
                 </form>
-                <h1 className="header-text u-margin-bottom">Snippet Preview</h1>
+                <h1 className="header-text u-margin-top">Snippet Preview</h1>
                   <Snippet backColor="#101010" width="80%"/>   
-                <div className="center-hrz u-margin-top-big">
+                <div className="center-hrz">
                     {
                         this.state.firstName !== "" &&
                         this.state.lastName !== "" &&
@@ -128,9 +134,9 @@ class Form extends React.Component {
                         this.state.company !== "" &&
                         this.state.address1 !== "" &&
                         this.state.address2 !== "" &&
+                        this.state.country !== "" &&
                         this.state.city !== "" ? <Link to="/create"><button className="btn normal-text" onClick={this.handleInfo}>Create Receipt</button> </Link> : <p>Please enter donor details</p>
-                    }
-                  
+                    }         
                 </div>
             </div>
         );

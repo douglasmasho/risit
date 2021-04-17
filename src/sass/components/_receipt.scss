@@ -67,10 +67,17 @@
         @media print{
             font-size: 3rem !important;
         }
+    cursor: pointer;
+    transition: all .3s;
+    &:hover{
+        color: lime;
+    }
+
     }
 
     &-donor-info{
         @media print{
+        
             font-size: 4rem !important;
         }
     }
@@ -80,4 +87,16 @@
     border-left: $red-ish 5px solid;
     padding-left: 2rem;
     justify-content: flex-start !important;
+}
+
+
+.remove-item{
+    @media print{
+        display: none;
+    }  
+    cursor: pointer;
+    transition: all .3s;
+    &:hover{
+        color: lime;
+    }
 }

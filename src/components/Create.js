@@ -7,9 +7,12 @@ import { exportComponentAsJPEG, exportComponentAsPDF, exportComponentAsPNG } fro
 import  jsPDF  from "jspdf";
 import html2canvas from "html2canvas";
 import ReactToPrint from 'react-to-print';
+import {nanoid} from "nanoid";
+import moment from 'moment'
+
 
 const Create = (props) => {
-    const {firstName, lastName, email, company, address1, address2, city} = props.donorInfo;
+    const {firstName, lastName, email, company, address1, address2, city, country} = props.donorInfo;
     const functionRef = useRef(null)
 
 
@@ -64,16 +67,22 @@ const Create = (props) => {
                     </td>
                     <td style={{width: "50%"}}>
                     <div>
+                      
                       <p className="receipt__title">Donation <span>Receipt</span></p>
                       <div className="u-margin-top receipt__donor-info-div">
                           <h1 className="receipt-donor-info">Donor Information</h1>
                          <p className="receipt__donor-info">Name: {firstName} {lastName}</p>
                          <p className="receipt__donor-info">Email: {email}</p>
                          <p className="receipt__donor-info">Comapany: {company}</p>
+                         <p className="receipt__donor-info">Address:</p>
                          <p className="receipt__donor-info">{address1}</p>
                          <p className="receipt__donor-info">{address2}</p>
                          <p className="receipt__donor-info">{city}</p>
+                         <p className="receipt__donor-info">{country}</p>
                       </div>
+                      <p className="receipt__donor-info" style={{color: "white"}}>receipt no.: {nanoid()}</p>
+                     <p className="receipt__donor-info" style={{color: "white"}}>Date: {moment().format("MMM Do YY")}</p>
+
                     </div>
                     </td>
                     </tr>
@@ -86,12 +95,9 @@ const Create = (props) => {
             <button onClick={() => exportComponentAsPNG(pdfRef)}>
          Export As JPEG
        </button> */}
-
-       <ReactToPrint
-        trigger={() => <button>Print this out!</button>}
-        content={() => pdfRef.current}
-      />
-
+       <div className="center-hrz u-margin-top u-margin-bottom">
+       <ReactToPrint style={{fontSize: "2rem"}} trigger={() => <button>Print this out!</button>} content={() => pdfRef.current} className="btn normal-text"/>
+       </div>
         </div>
     )
 }
