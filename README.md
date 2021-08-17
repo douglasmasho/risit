@@ -1,3 +1,21 @@
+# RISIT
+![Banner](./RISITBG.png)
+### [Intro Video](https://vimeo.com/588386641)
+### [Live Demo](https://risit-d18a1.web.app)
+
+## Description
+RISIT is a receipt(ivoice generator) that i created for SEE Namibia (IAMVoting Namibia at the time).
+
+This app can be used to generate and print an invoice that includes the transaction details as well as the donor's details
+
+
+## Technologies used
+React, html2canvas, scss, react-to-print, redux, redux-persist.
+
+#
+#
+#
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
