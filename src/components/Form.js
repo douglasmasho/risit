@@ -65,7 +65,7 @@ class Form extends React.Component {
                 {/* <button onClick={this.testFunc2}>Check State</button> */}
                 <h2 className="header-text">Input Donor Details</h2>
                 <form action="" onSubmit={this.handleSubmit}>
-                    <div className="center-hrz--col">
+                       <div className="center-hrz--col">
                         <div className="input-group center-hrz--col row-2--child">
                             <input type="text" name="text" id="firstName" className="input-textbox" placeholder="First name" required onChange={this.handleChange}/>
                             <label htmlFor="firstName" className="input--label">First Name</label>
